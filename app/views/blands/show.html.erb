@@ -1,22 +1,33 @@
 <h1>Blands#show</h1>
 <p>Find me in app/views/blands/show.html.erb</p>
-<table>
-    <dr>
-        <dt>パラメタ</dt><dt>値</dt>
-    </dr>
-    <dr>
-        <dt>銘柄コード</dt><dt><%= @bland[:bland_cd] %></dt>
-    </dr>
-    <dr>
-        <dt>銘柄名</dt><dt><%= @bland[:bland_name] %></dt>
-    </dr>
-    <dr>
-        <dt>市場区分</dt><dt><%= @bland[:market_prod_cls] %></dt>
-    </dr>
-    <dr>
-        <dt>取得フラグ</dt><dt><%= @bland[:fetch_flg] %></dt>
-    </dr>
-    <dr>
-        <dt>アクセスURL</dt><dt><%= @bland[:access_url_string] %></dt>
-    </dr>
-</table>
+
+<div style="margin:0px;padding:0px;" align="center">
+  <table width="98%" style="border-collapse: collapse;border:2px solid #66CCFF;background-color:#D7F1F8;color:#000000;text-align:left;">
+    <tbody>
+      <tr>
+        <th style="border:2px solid #66CCFF;background-color:#BFEEEE;color:#000000;text-align:center;">パラメタ</th>
+        <th style="border:2px solid #66CCFF;background-color:#BFEEEE;color:#000000;text-align:center;">値</th>
+      </tr>
+      <tr>
+        <td style="border:2px solid #66CCFF;text-align:left;">銘柄コード</td>
+        <td style="border:2px solid #66CCFF;text-align:left;"><%= @bland[:bland_cd] %></td>
+      </tr>
+      <tr>
+        <td style="border:2px solid #66CCFF;text-align:left;">銘柄名</td>
+        <td style="border:2px solid #66CCFF;text-align:left;"><%= @bland[:bland_name] %></td>
+      </tr>
+      <tr>
+        <td style="border:2px solid #66CCFF;text-align:left;">市場区分</td>
+        <td style="border:2px solid #66CCFF;text-align:left;"><%= @bland[:market_prod_cls] %></td>
+      </tr>
+      <tr>
+        <td style="border:2px solid #66CCFF;text-align:left;">取得フラグ</td>
+        <td style="border:2px solid #66CCFF;text-align:left;"><%= @bland[:fetch_flg] %></td>
+      </tr>
+      <tr>
+        <td style="border:2px solid #66CCFF;text-align:left;">アクセスURL</td>
+        <td style="border:2px solid #66CCFF;text-align:left;"><%= link_to @bland[:access_url_string] @bland[:access_url_string] %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
