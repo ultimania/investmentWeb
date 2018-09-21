@@ -6,7 +6,7 @@ class Bland < ApplicationRecord
     apiServerPort = 5000
     baseUrl = 'http://' + apiServerIp + ':' + apiServerPort + '/api/'
 
-    def find(bland_cd)
+    def myfind(bland_cd)
         client = HTTPClient.new
         header = [["Content-Type", "application/json"]]
         # Output debugging information with standard error.
