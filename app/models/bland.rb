@@ -18,3 +18,4 @@ class Bland < ApplicationRecord
         # It converts the acquired JSON into a hash of using Symbol and returns it.
         return JSON.parse(res).symbolize_keys
     end
+end
