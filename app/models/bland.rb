@@ -3,7 +3,7 @@ require 'json'
 
 class Bland < ApplicationRecord
     apiServerIp = '192.168.0.21'
-    apiServerPort = 5000
+    apiServerPort = '5000'
     baseUrl = 'http://' + apiServerIp + ':' + apiServerPort + '/api/'
 
     def myfind(bland_cd)
