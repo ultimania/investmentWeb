@@ -1,6 +1,5 @@
 <h1>Blands#show</h1>
 <p>Find me in app/views/blands/show.html.erb</p>
-
 <div style="margin:0px;padding:0px;" align="center">
   <table width="98%" style="border-collapse: collapse;border:2px solid #66CCFF;background-color:#D7F1F8;color:#000000;text-align:left;">
     <tbody>
@@ -26,8 +25,11 @@
       </tr>
       <tr>
         <td style="border:2px solid #66CCFF;text-align:left;">アクセスURL</td>
-        <td style="border:2px solid #66CCFF;text-align:left;"><%= link_to @bland[:access_url_string] @bland[:access_url_string] %></td>
+        <td style="border:2px solid #66CCFF;text-align:left;"><%= link_to @bland[:access_url_string] , @bland[:access_url_string] %></td>
       </tr>
     </tbody>
   </table>
+  
 </div>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
