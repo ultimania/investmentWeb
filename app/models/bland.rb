@@ -4,18 +4,62 @@ require 'json'
 class Bland
     @@apiServerIp = '172.30.20.1'
     @@apiServerPort = '30005'
-    @@baseUrl = 'http://' + @@apiServerIp + ':' + @@apiServerPort + '/api/bland/'
+    @@baseUrl = 'http://' + @@apiServerIp + ':' + @@apiServerPort
 
-    def self.myfind(bland_cd)
+    def self.getBland(bland_cd)
         client = HTTPClient.new
-        header = [["Content-Type", "application/json"]]
+        header = [['Content-Type', 'application/json']]
+        url = @@baseUrl + '/api/bland/'
         # Output debugging information with standard error.
         # client.debug_dev = $stderr
 
         # Get request
-        res = client.get(@@baseUrl + bland_cd + '/', header: header).body
+        res = client.get(url + bland_cd + '/', header: header).body
 
         # It converts the acquired JSON into a hash of using Symbol and returns it.
         return JSON.parse(res, symbolize_names: true)
     end
+
+    def self.getStockPrice(size)
+        client = HTTPClient.new
+        header = [['Content-Type', 'application/json']]
+        url = @@baseUrl + '/api/stockprice/?limit=' + size.to_s
+        # Output debugging information with standard error.
+        # client.debug_dev = $stderr
+
+        # Get request
+        res = client.get(url, header: header).body
+
+        # It converts the acquired JSON into a hash of using Symbol and returns it.
+        return JSON.parse(res)
+    end
+    
+    def self.selectStockPrice(size,column_indexes)
+        # Get stock price REST for results.
+        stock_price_hash = self.getStockPrice(size)
+
+        # Convert a hash of a symbol to an array.
+        array = [['id','market_prod_cls','current_price','day_before_ratio','opening_price','high_orice','low_price','sales_volume','created_at','bland_cd']]
+        for record in stock_price_hash["results"]
+          array.push(record.values)
+        end
+        
+        # selected_array = array
+
+        # Select columns from array        
+        selected_array = Array.new()
+        for record in array
+          selected_record = Array.new()
+          for index in column_indexes
+            selected_record.push(record[index])
+          end
+          selected_array.push(selected_record)
+        end
+
+        return selected_array
+    end
+    
 end
+
+
+
