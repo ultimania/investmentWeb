@@ -1,23 +1,24 @@
 window.onload = function() {
-    // Get graph drawing data from rails model.
+    // Variable definition
     var stock_price ;
     var data_array = new Array();
 
-    // Convert String to array
+    // Obtain data of rails-model via "input" element of rails-view.
     stock_price = $('.stock_price').val();
+
+    // Convert String to array
     stock_price.slice(2).slice(0,-2).replace(/ /g,"").replace(/"/g,"").split("],[").forEach(
         function(value){
             var array = value.split(",");
-            // If the test element contains an alphabetic character, do not perform integer conversion. 
+            /* If the array's element contains an alphabetic character, 
+             * do not perform Float conversion.                        */
             if(array[0].match(/^[0-9.]*$/))
-            {
                 array = array.map(function (element) { return parseFloat(element); });
-            }
             data_array.push(array)
         }
     );
 
-    // Chart Data set
+    // Create Chart DataSet
     var barChartData = {
         labels: data_array[8],
         datasets: [
@@ -41,7 +42,7 @@ window.onload = function() {
         ],
     };
 
-    // Chart Option
+    // Create Chart Option
     var complexChartOption = {
         responsive: true,
         scales: {
