@@ -1,5 +1,70 @@
-%h1 Blands#show
-%p Find me in app/views/blands/show.html.erb
+%header{"data-block-type" => "headers", "data-id" => "3"}
+  .container
+    %nav.navbar.navbar-expand-lg
+      %a.navbar-brand{:href => "https://www.froala.com"}
+        %img{:alt => "image", :height => "30", :src => "https://editor-latest.s3.amazonaws.com/design-blocks/block_images/img_logo.png"}/
+      %button.navbar-toggler{"aria-controls" => "navbarNav5", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav5", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarNav5.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            %a.nav-link{:href => "https://www.froala.com"}
+              Home
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Features
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Pricing
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Team
+        %ul.navbar-nav.justify-content-end.ml-auto
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Docs
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Contact
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Log In
+        %a.btn.ml-md-3{:href => "https://www.froala.com"} Button
 %input{name: "stock_price", type: "hidden", value: @stock_price, class: 'stock_price' }/
-#chart_div{:style => "width: 98%; height: 500px;"}
+-#%section.fdb-block{"data-block-type" => "contents", "data-id" => "1", :draggable => "true", :style => "background-image: url(https://editor-latest.s3.amazonaws.com/design-blocks/block_images/bg_c_1.svg);"}
+%section.fdb-block{"data-block-type" => "contents", "data-id" => "1", :draggable => "true"}
+  .container#chart_div
+    .row.text-left
+      .col-12.col-sm-10.m-auto.m-md-0.col-md-8.col-lg-6
+        .fdb-box
+          .row.justify-content-center
+            .col-12.col-xl-8.text-center
+              -# #chart_div{:style => "width: 98%; height: 300px;"}
+              %h1 Froala Design Blocks
+              %p.text-h3 When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove
+              %p.text-h3.mt-4
+                %a{:href => "https://www.froala.com"} Learn More &gt;
+%footer.fdb-block.footer-small{"data-block-type" => "footers", "data-id" => "2"}
+  .container
+    .row.align-items-center
+      .col-12.col-md-6
+        %ul.nav.justify-content-center.justify-content-md-start
+          %li.nav-item
+            %a.nav-link.active{:href => "https://www.froala.com"} Home
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Features
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} Terms
+          %li.nav-item
+            %a.nav-link{:href => "https://www.froala.com"} About
+      .col-12.col-md-6.mt-4.mt-md-0.text-center.text-md-right
+        %a{:href => "https://www.froala.com"}>
+          %i.fa.fa-twitter{"aria-hidden" => "true"}
+          
+        = succeed "\u{a0}\u{a0}" do
+          %a{:href => "https://www.froala.com"}
+            %i.fa.fa-facebook{"aria-hidden" => "true"}
+        = succeed "\u{a0}\u{a0}" do
+          %a{:href => "https://www.froala.com"}
+            %i.fa.fa-instagram{"aria-hidden" => "true"}
+        = succeed "\u{a0}\u{a0}" do
+          %a{:href => "https://www.froala.com"}
+            %i.fa.fa-pinterest{"aria-hidden" => "true"}
+        %a{:href => "https://www.froala.com"}
+          %i.fa.fa-google{"aria-hidden" => "true"}
 
