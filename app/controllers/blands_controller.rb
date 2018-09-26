@@ -15,9 +15,10 @@ class BlandsController < ApplicationController
     #  7.sales_volume
     #  8.created_at
     #  9.bland_cd
-    @stock_price = Bland::selectStockPrice(params[:bland_cd], 100, [8,2])
+    @stock_price = Bland::selectStockPriceForChartJs(params[:bland_cd], 100)
 
   end
 end
+
 
 

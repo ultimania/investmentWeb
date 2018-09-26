@@ -34,7 +34,7 @@ class Bland
         return JSON.parse(res)
     end
     
-    def self.selectStockPrice(bland_cd,size,column_indexes)
+    def self.selectStockPriceForGoogleChart(bland_cd,size,column_indexes)
         # Get stock price REST for results.
         stock_price_hash = self.getStockPrice(bland_cd,size)
 
@@ -45,8 +45,6 @@ class Bland
             array.push(record.values)
         end
         
-        # selected_array = array
-
         # Select columns from array        
         selected_array = Array.new()
         for record in array
@@ -60,6 +58,21 @@ class Bland
         return selected_array
     end
     
+    def self.selectStockPriceForChartJs(bland_cd,size)
+        # Get stock price REST for results.
+        stock_price_hash = self.getStockPrice(bland_cd,size)
+
+        # Perform matrix transformation of the acquired hash.
+        result_array = Array.new()
+        for record in stock_price_hash["results"]
+            result_array.push(record.values)
+        end
+        result_array = result_array.transpose
+
+        return result_array
+    end
+    
 end
+
 
 
