@@ -2,8 +2,8 @@ require 'httpclient'
 require 'json'
 
 class Bland
-    @@apiServerIp = '172.30.20.1'
-    @@apiServerPort = '30005'
+    @@apiServerIp = '192.168.0.21'
+    @@apiServerPort = '8000'
     @@baseUrl = 'http://' + @@apiServerIp + ':' + @@apiServerPort
 
     def self.getBland(bland_cd)
